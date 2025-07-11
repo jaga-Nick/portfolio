@@ -115,8 +115,8 @@ Mainvisual
 #mainvisual img {
     width: 100%;
     max-width: 1920px;
-    height: 420px;
-    object-fit: cover;
+    height: auto; /* 高さを自動調整 */
+    object-fit: contain; /* 画像全体が収まるように表示 */
 }
 
 /*-------------------------------------------
