@@ -16,6 +16,31 @@ li {
     list-style: none;
 }
 
+/*-------------------------------------------
+レイアウト
+-------------------------------------------*/
+.page-container {
+    display: flex;
+}
+.sidebar {
+    width: 240px;
+    height: 100vh; /* 画面の高さに合わせる */
+    background-color: #f8f9fa;
+    padding: 30px;
+    position: fixed; /* サイドバーを固定 */
+    left: 0;
+    top: 0;
+    overflow-y: auto; /* 内容が多い場合にスクロール */
+}
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+    margin-left: 240px; /* 固定したサイドバーの幅だけ左に余白 */
+}
+
+/*-------------------------------------------
+共通
+-------------------------------------------*/
 .wrapper {
     max-width: 960px;
     margin: 0 auto 130px auto;
@@ -24,6 +49,7 @@ li {
 }
 .site-title {
     line-height: 1px;
+    margin-bottom: 50px;
 }
 .site-title a {
     display: block;
@@ -35,8 +61,23 @@ li {
 }
 
 /*-------------------------------------------
-ヘッダー
+サイドバーのナビゲーション
 -------------------------------------------*/
+.sidebar nav ul li {
+    margin-bottom: 20px;
+}
+.sidebar nav li a {
+    color: #24292e;
+    font-size: 1rem;
+}
+.sidebar nav li a:hover {
+    opacity: 0.7;
+}
+
+/*-------------------------------------------
+ヘッダー (旧スタイル・不要なためコメントアウト)
+-------------------------------------------*/
+/*
 #header {
     max-width: 960px;
     display: flex;
@@ -63,6 +104,7 @@ li {
 #header li img.icon {
     width: 20px;
 }
+*/
 
 /*-------------------------------------------
 Mainvisual
@@ -78,16 +120,23 @@ Mainvisual
 }
 
 /*-------------------------------------------
-About
+About / Skills / Appeal
 -------------------------------------------*/
-#about ul {
+#about ul,
+#skills ul {
     margin-bottom: 30px;
+    list-style: none; /* リストの点を消す */
+    padding-left: 0;
 }
-#about li:first-child {
-    margin-bottom: 30px;
+#about li,
+#skills li {
+    margin-bottom: 10px;
 }
-#about p {
+#about p,
+#skills p,
+#appeal p {
     text-align:justify;
+    line-height: 1.8;
 }
 
 /*-------------------------------------------
@@ -102,6 +151,10 @@ Works
 #works li {
     width: 31%;
     margin-bottom: 23px;
+    transition: opacity 0.3s;
+}
+#works li:hover {
+    opacity: 0.8;
 }
 
 /*-------------------------------------------
@@ -125,98 +178,73 @@ News
 }
 
 /*-------------------------------------------
-Contact
--------------------------------------------*/
-#contact dl {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-#contact dt {
-    width: 15%;
-}
-#contact dd {
-    width: 85%;
-    margin-bottom: 10px;
-}
-#contact dd input,
-#contact dd textarea {
-    width: 100%;
-    border: solid 1px #c8c8c8;
-    padding: 10px;
-}   
-#contact dd textarea {
-    height: 10rem;
-}
-#contact .button {
-    text-align: center;
-}
-#contact .button input {
-    width: 200px;
-    background-color: #24292e;
-    color: #fff;
-    padding: 15px 0;
-    border: solid 1px #24292e;
-}
-#contact .button input:hover {
-    background: #fff;
-    color: #24292e;
-}
-
-/*-------------------------------------------
 フッター
 -------------------------------------------*/
 #footer {
     background-color: #24292e;
     color: #fff;
-    font-size: 0.5rem;
-    padding: 10px 20px;
+    font-size: 0.8rem;
+    padding: 20px;
     text-align: center;
 }
 
 /*-------------------------------------------
-SP
+SP (スマートフォン表示)
 -------------------------------------------*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    /* 768px以下の画面幅で適用 */
+
+    .page-container {
+        flex-direction: column; /* サイドバーとメインを縦並びに */
+    }
+
+    .sidebar {
+        position: static; /* 固定を解除 */
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box; /* paddingを含めて幅100%にする */
+    }
+
+    .sidebar .site-title {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .sidebar nav li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .main-content {
+        margin-left: 0; /* サイドバーの余白をなくす */
+        padding: 20px;
+    }
+
     .wrapper {
         margin-bottom: 70px;
-    }
-    .site-title {
-        margin-top: 20px;
+        padding: 0;
     }
     .sec-title {
         margin-bottom: 40px;
     }
 
-/*-------------------------------------------
-ヘッダー
--------------------------------------------*/
-    #header {
-        max-width: 100%;
-        height: auto;
-        flex-direction: column;
-    }
-    #header li {
-        font-size: 0.8rem;
-        margin-left: 20px;
-    }
-    #header li:first-child {
-        margin-left: 0;
-    }
-
-/*-------------------------------------------
-Works
--------------------------------------------*/
-    #works ul {
-        flex-direction: column;
-    }
+    /*-------------------------------------------
+    Works (SP)
+    -------------------------------------------*/
     #works li {
-        width: 100%;
+        width: 48%; /* 2列にする */
     }
 
-/*-------------------------------------------
-News
--------------------------------------------*/
+    /*-------------------------------------------
+    News (SP)
+    -------------------------------------------*/
     #news dl {
         flex-direction: column;
     }
@@ -228,18 +256,18 @@ News
     #news dd {
         width: 100%;
         padding-top: 0;
+        border-bottom: solid 1px #c8c8c8;
     }
+}
 
-/*-------------------------------------------
-Contact
--------------------------------------------*/
-    #contact dl {
-        flex-direction: column;
-    }
-    #contact dt {
-        width: 100%;
-    }
-    #contact dd {
-        width: 100%;
+@media screen and (max-width: 600px) {
+    /* 600px以下の画面幅でさらに調整 */
+
+    /*-------------------------------------------
+    Works (SP)
+    -------------------------------------------*/
+    #works li {
+        width: 100%; /* 1列にする */
+        margin-bottom: 20px;
     }
 }

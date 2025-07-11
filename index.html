@@ -12,77 +12,97 @@
 </head>
 
 <body>
-    <header id="header">
-        <h1 class="site-title"><a href="index.html"><img src="img/rantan.svg" alt="My Work"></a></h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#works">Works</a></li>
-                <li><a href="#news">News</a></li>
-                <li>
-                    <!--<a href="https://www.instagram.com/" target="_blank">
-                    <img class="icon" src="./img/icon-instagram.png" alt="インスタグラム">
-                    </a>-->
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <div class="page-container">
+        <aside class="sidebar">
+            <h1 class="site-title"><a href="index.html"><img src="img/rantan.svg" alt="My Work"></a></h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#appeal">Appeal</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#news">News</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-    <main>
-    <div id="mainvisual">
-        <picture>
-        <source media="(max-width: 600px)" srcset="img/main.jpeg">
-        <img src="img/main.jpeg" alt="テキストテキストテキスト">
-        </picture>
+        <main class="main-content">
+            <div id="mainvisual">
+                <picture>
+                    <source media="(max-width: 600px)" srcset="img/main.jpeg">
+                    <img src="img/main.jpeg" alt="テキストテキストテキスト">
+                </picture>
+            </div>
+
+            <section id="about" class="wrapper">
+                <h2 class="sec-title">About</h2>
+                <ul>
+                    <li>矢野 巧</li>
+                    <li>XXXXXX</li>
+                    <li>tel: 080-2475-5513</li>
+                    <li>url: www.xxxxxx.jp</li>
+                    <li>mail: shrimp1059yt@gmail.com</li>
+                </ul>
+                <p>
+                    プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                </p>
+            </section>
+
+            <section id="skills" class="wrapper">
+                <h2 class="sec-title">Skills</h2>
+                <p>
+                    ここにあなたのスキルを記述します。箇条書きがおすすめです。<br>
+                    例：
+                </p>
+                <ul>
+                    <li><b>言語:</b> C++, C#, Python, HTML/CSS</li>
+                    <li><b>エンジン/ライブラリ:</b> Unity, Unreal Engine, DirectX, OpenGL</li>
+                    <li><b>ツール:</b> Git, Visual Studio, Photoshop</li>
+                </ul>
+            </section>
+
+            <section id="appeal" class="wrapper">
+                <h2 class="sec-title">Appeal</h2>
+                <p>
+                    ここにあなたのアピールポイントを記述します。
+                    チーム開発での協調性や、困難な課題に対する問題解決能力など、具体的なエピソードを交えて書くと効果的です。
+                    ゲームプログラマーとして、どのような点で貢献できるかをアピールしましょう。
+                </p>
+            </section>
+
+            <section id="works" class="wrapper">
+                <h2 class="sec-title">Works</h2>
+                <ul>
+                    <li><a href="work1.html"><img src="img/ex.jpg" alt="作品1の画像"></a></li>
+                    <li><a href="work2.html"><img src="img/ex.jpg" alt="作品2の画像"></a></li>
+                    <li><a href="work3.html"><img src="img/ex.jpg" alt="作品3の画像"></a></li>
+                    <li><a href="work4.html"><img src="img/ex.jpg" alt="作品4の画像"></a></li>
+                    <li><a href="work5.html"><img src="img/ex.jpg" alt="作品5の画像"></a></li>
+                    <li><a href="work6.html"><img src="img/ex.jpg" alt="作品6の画像"></a></li>
+                </ul>
+            </section>
+
+            <section id="news" class="wrapper">
+                <h2 class="sec-title">News</h2>
+                <dl>
+                    <dt>2023.12.09</dt>
+                    <dd>大工大枚方オープンキャンパスに参加</dd>
+                    <dt>2023.11.03</dt>
+                    <dd>北山祭にゲーム出展</dd>
+                    <dt>2023.09.10</dt>
+                    <dd>KC3 2023に参加しました。</dd>
+                    <dt>2023.08.15</dt>
+                    <dd>ゲームプロジェクトに参加</dd>
+                </dl>
+            </section>
+        </main>
     </div>
 
-    <section id="about" class="wrapper">
-        <h2 class="sec-title">About</h2>
-        <ul>
-            <li>矢野 巧</li>
-            <li>XXXXXX</li>
-            <li>tel: 080-2475-5513</li>
-            <li>url: www.xxxxxx.jp</li>
-            <li>mail: shrimp1059yt@gmail.com</li>
-        </ul>
-        <p>
-        プロフィールテキストテキストテキストテキストテキストテキストテキストテキストテキストスト
-        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-        </p>
-    </section>
-
-    <section id="works" class="wrapper">
-        <h2 class="sec-title">Works</h2>
-        <ul>
-            <li><img src="img/ex.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/ex.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/ex.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/ex.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/ex.jpg" alt="テキストテキストテキスト"></li>
-            <li><img src="img/ex.jpg" alt="テキストテキストテキスト"></li>
-        </ul>
-    </section>
-
-    <section id="news" class="wrapper">
-        <h2 class="sec-title">News</h2>
-        <dl>
-            <dt>2023.12.09</dt>
-            <dd>大工大枚方オープンキャンパスに参加</dd>
-            <dt>2023.11.03</dt>
-            <dd>北山祭にゲーム出展</dd>
-            <dt>2023.09.10</dt>
-            <dd>KC3 2023に参加しました。</dd>
-            <dt>2023.08.15</dt>
-            <dd>ゲームプロジェクトに参加</dd>
-        </dl>
-    </section>
-    </main>
-
     <footer id="footer">
-    <p>&copy; 2023 My Work</p>
+        <p>&copy; 2023 My Work</p>
     </footer>
 
 </body>
-
 </html>
